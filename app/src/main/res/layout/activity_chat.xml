@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="#5FAE9E">
+    android:background="#FFFFFF">
 
-    <!-- Header (Messenger-like with profile and online status) -->
+    <!-- Header -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,10 +21,10 @@
             android:id="@+id/backButton"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/ic_arrow_back"
+            app:srcCompat="@drawable/ic_arrow_back"
             app:tint="#FFFFFF"
             android:background="@android:color/transparent"
-            android:contentDescription="@string/back"
+            android:contentDescription="Back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -35,7 +34,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="12dp"
-            android:src="@drawable/chat_human_head"
+            app:srcCompat="@drawable/chat_human_head"
             android:scaleType="centerCrop"
             android:background="@drawable/chat_head_profile"
             app:layout_constraintStart_toEndOf="@id/backButton"
@@ -111,9 +110,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="@string/type_message"
+            android:hint="Type a message..."
             android:inputType="text"
-            android:autofillHints="message"
             android:padding="10dp"
             android:background="@drawable/edittext_background_dark"
             android:textColor="#FFFFFF"
@@ -126,9 +124,9 @@
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/chat_send_button"
+            app:srcCompat="@drawable/chat_send_button"
             app:tint="#5FAE9E"
-            android:contentDescription="@string/send" />
+            android:contentDescription="Send" />
     </LinearLayout>
 
     <!-- Bottom Navigation -->
