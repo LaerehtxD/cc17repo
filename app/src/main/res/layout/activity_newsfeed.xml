@@ -151,7 +151,8 @@
                             android:background="@android:color/transparent"
                             android:contentDescription="@string/like"
                             app:srcCompat="@drawable/newsfeed_like"
-                            app:tint="#000000" />
+                            app:tint="#000000"
+                            />
 
                         <ImageButton
                             android:id="@+id/news1_comment"

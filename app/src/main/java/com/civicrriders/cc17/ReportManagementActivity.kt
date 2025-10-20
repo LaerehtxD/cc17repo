@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
+import android.widget.Button
 class ReportManagementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +20,20 @@ class ReportManagementActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
+        val submitProblemButton = findViewById<Button>(R.id.submitProblemButton)
+        // Back to Home Page
+        backButton.setOnClickListener {
+            finish() // simply goes back
+        }
 
+        // Go to Report Problem Page
+        submitProblemButton.setOnClickListener {
+            val intent = Intent(this, ReportProblemActivity::class.java)
+            startActivity(intent)
+        }
 
         setupBottomNav()
+
     }
 
     private fun setupBottomNav() {
