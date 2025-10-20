@@ -10,9 +10,6 @@ import android.widget.Button
 import android.content.Intent
 
 
-
-
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         // When button is clicked, go to HomePage activity
         btnGetStarted.setOnClickListener {
-            val intent = Intent(this, home_page::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 

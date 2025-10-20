@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cc17">
         <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
