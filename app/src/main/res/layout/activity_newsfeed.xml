@@ -4,56 +4,266 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:fitsSystemWindows="true"
+    android:background="#5FAE9E">
 
     <!-- Header -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EEEEEE"
-        android:padding="12dp"
-        >
+        android:background="#000000"
+        android:paddingTop="36dp"
+        android:paddingBottom="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
 
         <ImageButton
             android:id="@+id/backButton"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/ic_arrow_back"
+            app:srcCompat="@drawable/ic_arrow_back"
+            app:tint="#FFFFFF"
             android:background="@android:color/transparent"
-            android:contentDescription="Back"
+            android:contentDescription="@string/back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:id="@+id/pageTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Report Problem"
+            android:text="Barangay Newsfeed"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/backButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="12dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Page content -->
+    <!-- Newsfeed Scroll Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@android:color/transparent"
+            android:showDividers="middle">
+
+            <!-- Sample News Card 1 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="4dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:background="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/news1_avatar"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:srcCompat="@drawable/app_logo"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/news_image"
+                            android:background="@drawable/rounded_bg" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp">
+
+                            <TextView
+                                android:id="@+id/news1_author"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BarangayGo Official"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/news1_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2h ago"
+                                android:textColor="#777777"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/news1_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Join us this weekend for the community clean-up drive at the town plaza!"
+                        android:textColor="#000000"
+                        android:layout_marginTop="8dp"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/news1_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/sample_lostdog"
+                        android:contentDescription="@string/news_image"
+                        android:background="@drawable/rounded_bg" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <ImageButton
+                            android:id="@+id/news1_like"
+                            android:layout_width="32dp"
+                            android:layout_height="28dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/like"
+                            app:srcCompat="@drawable/newsfeed_like"
+                            app:tint="#000000" />
+
+                        <ImageButton
+                            android:id="@+id/news1_comment"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            app:srcCompat="@drawable/newsfeed_comment"
+                            app:tint="#000000"
+                            android:layout_marginStart="12dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/comment" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sample News Card 2 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="4dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:background="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/news2_avatar"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:srcCompat="@drawable/app_logo"
+                            android:background="@drawable/rounded_bg"
+                            android:scaleType="centerCrop"
+                            android:contentDescription="@string/news_image" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp">
+
+                            <TextView
+                                android:id="@+id/news2_author"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BarangayGo Announcement"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/news2_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1d ago"
+                                android:textColor="#777777"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/news2_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="New curfew hours will take effect starting next week. Please be guided accordingly."
+                        android:textColor="#000000"
+                        android:layout_marginTop="8dp"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical">
+
+                        <ImageButton
+                            android:id="@+id/news2_like"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            app:srcCompat="@drawable/newsfeed_like"
+                            app:tint="#000000"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/like" />
+
+                        <ImageButton
+                            android:id="@+id/news2_comment"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            app:srcCompat="@drawable/newsfeed_comment"
+                            app:tint="#000000"
+                            android:layout_marginStart="12dp"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/comment" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
 
     <!-- Bottom Navigation -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="449dp"
-        android:layout_weight="1"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This is the Newsfeed page"
-            android:textSize="16sp" />
-    </LinearLayout>
-
     <include layout="@layout/include_bottom_nav" />
+
 </LinearLayout>

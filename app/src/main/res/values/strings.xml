@@ -4,4 +4,7 @@
     <string name="chat_support">Chat Support</string>
     <string name="type_message">Type a message...</string>
     <string name="send">Send</string>
+    <string name= "news_image">missing dog please help</string>
+    <string name="like">You liked this post!</string>
+    <string name="comment">Wow! Amazing</string>
 </resources>
