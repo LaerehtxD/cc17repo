@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#FFFFFF"
+    android:background="#69B1A1"
     tools:context=".home_page">
 
     <!-- Top logo and app name -->
@@ -23,10 +23,10 @@
 
         <ImageView
             android:id="@+id/topLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:contentDescription="Logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/app_logo"
+            android:contentDescription="app_logo"
             android:layout_marginEnd="8dp"/>
 
         <TextView
@@ -47,6 +47,7 @@
         android:text="What do you want to do?"
         android:textSize="18sp"
         android:textColor="#333333"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,130 +68,186 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp">
 
-        <!-- Tile 1: Report Management -->
-        <LinearLayout
+        <!-- Tile template -->
+        <!-- 1️⃣ Report Management -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_columnWeight="1">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A4EAE2"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
 
-            <ImageButton
-                android:id="@+id/tileReportManagement"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_launcher_foreground"
-                android:contentDescription="Report Management" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Report Management"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="12dp">
 
-        <!-- Tile 2: Report Problem -->
-        <LinearLayout
+                <ImageButton
+                    android:id="@+id/tileReportManagement"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/report_management_big"
+                    android:contentDescription="Report Management" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Report Management"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 2️⃣ Report Problem -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_columnWeight="1">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A4EAE2"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
 
-            <ImageButton
-                android:id="@+id/tileReportProblem"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_launcher_foreground"
-                android:contentDescription="Report Problem" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Report Problem"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="12dp">
 
-        <!-- Tile 3: Newsfeed -->
-        <LinearLayout
+                <ImageButton
+                    android:id="@+id/tileReportProblem"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/report_problem_big"
+                    android:contentDescription="Report Problem" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Report Problem"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3️⃣ Newsfeed -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_columnWeight="1">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A4EAE2"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
 
-            <ImageButton
-                android:id="@+id/tileNewsfeed"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_launcher_foreground"
-                android:contentDescription="Newsfeed" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Newsfeed"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="12dp">
 
-        <!-- Tile 4: Chat -->
-        <LinearLayout
+                <ImageButton
+                    android:id="@+id/tileNewsfeed"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/newsfeed_logo_big"
+                    android:contentDescription="Newsfeed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Newsfeed"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 4️⃣ Chat -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_columnWeight="1">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A4EAE2"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp">
 
-            <ImageButton
-                android:id="@+id/tileChat"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_launcher_foreground"
-                android:contentDescription="Chat" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chat"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="12dp">
 
-        <!-- Tile 5: Settings (centered last row) -->
-        <LinearLayout
+                <ImageButton
+                    android:id="@+id/tileChat"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/chat_logo_big"
+                    android:contentDescription="Chat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 5️⃣ Settings -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_columnSpan="2">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A4EAE2"
+            android:layout_columnSpan="2"
+            android:layout_margin="8dp">
 
-            <ImageButton
-                android:id="@+id/tileSettings"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_launcher_foreground"
-                android:contentDescription="Settings" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Settings"
-                android:textSize="14sp"
-                android:textColor="#000000"
-                android:layout_marginTop="8dp" />
-        </LinearLayout>
-    </GridLayout>
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="12dp">
 
+                <ImageButton
+                    android:id="@+id/tileSettings"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/settings_logo_big"
+                    android:contentDescription="Settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

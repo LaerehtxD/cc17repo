@@ -14,6 +14,11 @@ class ReportProblemActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_report_problem)
 
+        val backButton = findViewById<ImageButton>(R.id.backButton)
+        backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
         setupBottomNav()
     }
 
