@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    tools:context=".ReportProblemActivity">
 
     <!-- Header -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EEEEEE"
-        android:padding="12dp"
-        >
+        android:background="#000000"
+        android:paddingTop="36dp"
+        android:paddingBottom="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
 
         <ImageButton
             android:id="@+id/backButton"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/ic_arrow_back"
+            app:srcCompat="@drawable/ic_arrow_back"
+            app:tint="#FFFFFF"
             android:background="@android:color/transparent"
             android:contentDescription="Back"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,30 +32,107 @@
 
         <TextView
             android:id="@+id/pageTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Report Problem"
+            android:text="Report a Problem"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@id/backButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="12dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Page content -->
-    <LinearLayout
+    <!-- Content -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center">
-        <TextView
-            android:text="This is the Report Problem page"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+        android:padding="16dp"
+        android:background="#F9F9F9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Problem Description -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Problem Description"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingBottom="6dp" />
+
+            <EditText
+                android:id="@+id/problemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Describe the issue you want to report..."
+                android:gravity="top|start"
+                android:background="@drawable/rounded_edittext"
+                android:padding="10dp"
+                android:inputType="textMultiLine"
+                android:textColor="#000000" />
+
+            <!-- Location Field -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingTop="16dp"
+                android:paddingBottom="6dp" />
+
+            <EditText
+                android:id="@+id/problemLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the location or nearby landmark"
+                android:background="@drawable/rounded_edittext"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <!-- Upload Photo -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Attach Photo"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingTop="16dp"
+                android:paddingBottom="6dp" />
+
+            <Button
+                android:id="@+id/uploadPhotoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose Photo"
+                android:textAllCaps="false"
+                android:backgroundTint="#5FAE9E"
+                android:textColor="#FFFFFF"
+                android:drawableLeft="@drawable/report_camera"
+                android:padding="8dp" />
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submitReportButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Report"
+                android:textAllCaps="false"
+                android:backgroundTint="#000000"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="20dp"
+                android:padding="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <!-- Bottom Navigation -->
     <include layout="@layout/include_bottom_nav" />
